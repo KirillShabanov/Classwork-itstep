@@ -1,0 +1,23 @@
+#container{
+    width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    transition-property: transform ;
+    transition-duration: 3s;
+}
+.black{
+    height: 200px;
+    width: 200px;
+    background: black;
+}
+.white{
+    height: 200px;
+    width: 200px;
+    background: white;
+} 
+.circle{
+    height: 200px;
+    width: 200px;
+    background: green;
+    border-radius: 100px;
+}
