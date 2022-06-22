@@ -1,0 +1,35 @@
+.out {
+    height: 400px;
+    width: 400px;
+    left: calc(50% - 200px);
+    top: calc(50% - 200px);
+    background: greenyellow;
+    position: fixed;
+}
+.in {
+    font-size: 30px;
+    line-height: 100px;
+    color: white;
+    background: blue;
+    height: 100px;
+    width: 100px;
+    text-align: center;
+}
+.in1 {   
+    position: fixed;
+}
+.in2 {
+    position: fixed;
+    top: calc(50% - 200px);
+    left: calc(50% + 100px); 
+}
+.in3 {
+    position: fixed;
+    top: calc(50% + 100px);
+    left: calc(50% - 200px);
+}
+.in4 {
+    position: fixed;
+    left: calc(50% + 100px);
+    top: calc(50% + 100px);
+}

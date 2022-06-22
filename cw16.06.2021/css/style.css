@@ -1,0 +1,53 @@
+html,body {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    width: 400px;
+    background: green;
+    box-sizing: border-box;
+    border: 0px solid #eee;
+    transition-property: height, width, border, transform ;
+    transition-duration: 3s;
+}
+
+a {
+    position: fixed;
+    background: black;
+    color: white;
+    top: 5px;
+    padding: 5px;
+
+}
+#box:target {
+    height: 0px;
+    width: 0px;
+    border: 200px solid black;
+    transform: rotate(360deg);
+    
+}
+.start {
+    left: 482px;
+}
+.squere {
+    height: 100px;
+    width: 100px;
+    background: red;
+    border-radius: 50%;
+    transition-property: height,width,background;
+    transition-duration: 3s;
+}
+.squere:hover {
+    height: 200px;
+    width: 200px;
+    background: blue;
+}

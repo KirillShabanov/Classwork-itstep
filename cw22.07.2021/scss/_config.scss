@@ -1,0 +1,74 @@
+$white: #fff;
+$strange_blue: #6C8CD5;
+$almoust_gray: #989898;
+$dark_blue: #00294e;
+$light_grey: #a7a7a7;
+$dark_white: #DDD;
+$grey: #666;
+$very_dark_gray:#333;
+$somesing_blue: #3C5B9B;
+$something_yellow:#fcaf45;
+$something_dark_blue:#027ba5;
+$something_light_blue:#1DA1F2;
+$red:#FF0000;
+$strange_red:#E60023;
+$light_red:#fd4f57;
+$pure_white:#eee;
+$almaust_pure_white:#eaeaea;
+$black:#000;
+$another_gray:#aaaaaa;
+$another_light_gray:#222;
+$almost_red:#F00;
+$again_grey:#444;
+$very_white_white:#e5e5e5;
+$white1:#c0c0c0;
+$gray1:#999;
+$black1:#1a1a1a;
+$white2:#F2F2F2;
+$gray2:#747474;
+$black2:#303030;
+$white3:#ededed;
+$roboto:'Roboto';
+$serif:sans-serif;
+
+
+@mixin base_button {
+    min-width: 240px;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 25px 10px 27px;
+    letter-spacing: 1.1px;
+    text-decoration: none;
+    text-align: center;
+}
+@mixin envelope {
+    content: "\f0e0";
+    font-family: "Font Awesome 5 Free";
+    font-size: 13px;
+    font-weight: 400;
+}
+@mixin check{
+    font-family: "Font Awesome 5 Free";
+    content: "\f00c";
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    margin-right: 10px;
+}
+@mixin chevron-right {
+    content: '\f054';
+    font-family: "Font Awesome 5 Free";
+    font-size: 14px;
+    padding-right: 6px;
+    font-weight: 700;
+}
+$social-colors: (
+    fb: #3C5B9B,
+    in: #fcaf45,
+    li: #027ba5,
+    tw: #1DA1F2,
+    yt: #FF0000,
+    pt: #E60023
+);

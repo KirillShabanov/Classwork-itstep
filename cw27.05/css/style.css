@@ -1,0 +1,47 @@
+.container {
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+    background-color: #000;
+}
+
+
+.box {
+    background: red;
+    height: 100px;
+    width: 100%;
+    float: left;
+    position: relative;
+    margin: 1%;
+    font-size: 36px;
+    color: white;
+    display: none;
+}
+.box:nth-child(2n) {
+display: block;
+}
+@media (min-width: 768px) {
+    .box {
+        width: 226px;
+        height: 226px;
+    }
+    .container {
+        width: 768px;
+    }
+    .box:nth-child(2n+1) {
+        display: block;
+        background: blue;
+    }
+}
+@media (min-width: 1024px) {
+    .box {
+        width: 150px;
+        height: 150px;
+        display: block;
+        
+    }
+    .container {
+        width: 1024px;
+    }  
+    
+}

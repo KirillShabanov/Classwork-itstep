@@ -1,0 +1,316 @@
+body{
+    background: url("../img/pattern.png") repeat;
+    font: 11px 'Droid Sans', Arial, Helvetica, sans-serif;
+    line-height: 1.428571429;
+    color: #606060;
+}
+header{
+    background: #fff;
+    padding: 28px 0px 0px 0px;
+}
+.logo{
+    margin: 13px 0 0 0;
+    padding: 0;
+    float: left;
+}
+.logo a{
+    
+}
+.logo img{
+    text-decoration: none;
+}
+.logo span{
+    font: 300 10px 'Roboto';
+}
+.head-contact{
+float: right;
+}
+.head-contact span{
+
+}
+.head-contact a{
+    text-decoration: none;
+    color: #dd6509;
+    min-width: 100px;
+}
+.main-menu{
+    display: flex;
+    list-style-type: none;
+
+}
+.main-menu > li {
+    width: 100px;
+    font: bold 15px 'Asap';
+    position: relative;
+    text-transform: uppercase;
+    min-width: 90px;
+    
+}
+.main-menu > li > a {
+    text-decoration: none;
+    color: #595252;
+    display: flex;
+    align-items: center;
+    min-width: 90px;
+}
+.main-menu > li:hover > a {
+    color:#dd6509 ;}
+.main-menu > li > a.active {
+    color: #dd6509;
+    margin-bottom: 30px;
+}
+.main-menu > li > a > span {
+
+    
+}
+.main-menu > li > ul {
+    list-style-type: none;
+    position: absolute;
+    background: #acadad;
+    display: none;
+    z-index: 10;
+    top: 45px;
+    height: 159px;
+    padding: 18px 0px 18px 15px;
+    margin-right: 35px;
+    width: 95px;
+}
+.main-menu > li:hover > ul {
+display: block;
+}
+.main-menu > li > ul > li{
+    padding: 7px 0px;
+}
+.main-menu > li > ul > li > a:hover {
+    color: #dd6509;
+}
+.main-menu > li > ul > li > a {
+    text-decoration: none;
+    color: #fff;
+    font: 10px 'Droid Sans', Arial, Helvetica, sans-serif;
+    
+}   
+.main-menu > li > ul > li > a > span {
+    
+}
+.main-menu > li > ul > li:hover > ul {
+display: block;
+}
+.main-menu > li > ul > li > ul {
+    list-style-type: none;
+    position: absolute;
+    background: #acadad;
+    display: none;
+    z-index: 11;
+    left: 96px;
+    padding-left: 0px;
+    height: 131px;
+    padding: 17px 11px;
+    top: 28px;
+    width: 78px;
+}
+.main-menu > li > ul > li > ul > li {
+    padding: 7px;
+    padding-left: 6px;
+    margin-left: -9px;  
+}
+.main-menu > li > ul > li > ul > li > a {
+    text-decoration: none;
+    color: #fff;
+    font: 10px 'Droid Sans', Arial, Helvetica, sans-serif;
+}   
+.main-menu > li > ul > li > ul > li > a:hover{
+    color: #dd6509;
+}
+.main-menu > li > ul > li > ul > li > a > span {
+    
+}
+.wrapper{
+    background: #fff;
+    box-shadow: 0px 0px 50px 0px rgb(0 0 0 / 10%);
+    margin-bottom: 150px;
+    position: relative;
+    z-index: 10000;
+    width: 100%;
+}
+ @media (max-width:1169px){
+    .wrapper{
+        max-width: 100% !important;
+    }
+}
+@media (min-width:1170px){
+    .wrapper{
+        margin-top: -70px;
+    }
+}
+.main-slider .carousel-item{
+    width: 100%;
+    height: 550px;
+    background-size: cover;
+    background-position: center center;
+    background-size: 100% auto;
+}
+.main-slider .carousel-indicators button{
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    padding: 0;
+    margin: 5px;
+    background: #fff;
+    border: 0;
+    opacity: 1;
+    margin-bottom: 5rem;
+}
+.main-slider .carousel-indicators button.active, .main-slider .carousel-indicators button:hover{
+    background: #dc6511;
+}
+.products {
+    top: 1px;
+}
+.title {
+    text-align: center;
+    padding-top: 37px;
+}
+.main-tech {
+    position: relative;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.tech-item{
+    border: 1px solid #ddd;
+    padding: 25px 15px;
+    margin-bottom: 30px;
+    height: 341px;
+   
+}
+.title h2 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 41px;
+}
+h2 {
+    color: #595252;
+    font: bold 34px/39px 'Asap';
+    margin: 0 0 34px 0;
+}
+.tech-item .tech-item-head {
+    font: 16px 'Asap';
+    color: #333;
+    margin-bottom: 18px;
+    text-align: center;
+}
+.tech-item .tech-item-pic {
+    margin: 0 0 20px 0;
+}
+.tech-item .tech-item-pic img{
+    width: 100%;
+}
+p strong {
+    color: #090909;
+    font-weight: bold;
+}
+.tech-item .tech-item-text p {
+    line-height: 17px;
+    text-align: center;
+}
+.testim-text {
+    padding-left: 50px;
+    padding-top: 1px;
+    background: url(../img/quote.png) no-repeat 10px 10px;
+    margin-bottom: 12px;
+}
+.testim-name {
+    padding-left: 50px;
+    margin-bottom: 17px;
+}
+
+.testim-name a{
+    color: #000000;
+    font: 13px/20px 'Asap';
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.testim-name a:hover{
+    color: #ababab;
+}
+p span {
+    margin-bottom: 14px;
+    line-height: 17px;
+}
+.products {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 13px;
+    margin-bottom: 14px;
+}
+.products-pic img {
+    width: 100%;
+}
+.products-text {
+    line-height: 17px;
+    text-align: left;
+}
+.products a {
+    box-shadow: none;
+    position: relative;
+    text-decoration: none;
+    padding: 0;
+    font: 13px 'Asap';
+    margin: 0;
+    text-shadow: none;
+    color: #000000;
+    border: none;
+    background: none !important;
+    border-radius: 0;
+    text-transform: uppercase;
+    display: inline-block;
+}
+.products a:hover {
+    color: #ababab;
+}
+.news-date {
+    box-shadow: none;
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    text-shadow: none;
+    float: left;
+    margin-right: 27px;
+}
+.news-date span {
+    font: bold 30px/30px 'Asap';
+    color: #dc6511;
+}
+.news-date p {
+    font-style: normal;
+    color: #dc6511;
+    font: 17px 'Asap';
+}
+.news-text {
+    padding: 0;
+    color: #606060;
+}
+.registration-descript p {
+    margin-bottom: 14px;
+    line-height: 17px;
+}
+.registration-button a {
+    box-shadow: none;
+    position: relative;
+    text-decoration: none;
+    padding: 0;
+    font: 13px 'Asap';
+    margin: 0;
+    text-shadow: none;
+    color: #000000;
+    border: none;
+    background: none !important;
+    border-radius: 0;
+    text-transform: uppercase;
+    display: inline-block;
+}
+.registration-button {
+    margin-top: 23px;
+}
