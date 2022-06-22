@@ -1,0 +1,35 @@
+.work-text-header {
+    margin-top: 85px;
+    span {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
+        font-size: 50px;
+    }
+}
+.work-text-body {
+    margin-top: 50px;
+    margin-left: 460px;
+    margin-right: 460px;
+    span {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 20px;
+    }
+}
+.work-tabs {
+    margin-top: 70px;
+    margin-bottom: 90px;
+    margin-left: 611px;
+    margin-right: 611px;
+    .nav-link {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
+        font-size: 13px;
+        text-transform: uppercase;
+        color:#000;
+    }
+    .active {
+        border-radius: 20px !important;
+        width: 130px !important;
+        background-color: #f42267 !important;
+    }
+}

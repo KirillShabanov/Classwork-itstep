@@ -1,0 +1,21 @@
+.header-button {
+    margin-bottom: 20px;
+    margin-left: 300px;
+    margin-top: 71px;
+    .btn{
+        width: 200px;
+        height: 60px;
+        border-radius: 30px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
+        font-size: 17px;
+        text-transform: uppercase;
+    }
+    .btn-primary{
+        background-color: #f42267;
+    }
+    .btn-secondary{
+        background-color: #67328d;
+        margin-left: 24px;
+    }
+}

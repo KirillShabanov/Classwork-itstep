@@ -1,0 +1,41 @@
+.tabs {
+  margin-top: 31px;
+  margin-left: 321px; }
+  .tabs .nav-link {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #000; }
+  .tabs .active {
+    border-radius: 20px !important;
+    width: 130px !important;
+    background-color: #f42267 !important; }
+
+.au-main-text {
+  margin-left: 305px;
+  margin-top: 30px; }
+  .au-main-text span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px; }
+
+.au-button .btn {
+  margin-left: 317px;
+  margin-top: 55px;
+  margin-bottom: 120px;
+  height: 45px;
+  width: 146px;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+  border-radius: 10px; }
+.au-button .btn-primary {
+  background-color: #f42267; }
+
+.watch-img img {
+  position: relative;
+  top: 70px;
+  left: 210px; }
+
+/*# sourceMappingURL=tab.css.map */

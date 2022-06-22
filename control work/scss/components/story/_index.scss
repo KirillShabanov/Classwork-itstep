@@ -1,0 +1,42 @@
+.story {
+    background-image: url(../img/story_bg.jpg);
+    background-size: cover;
+    text-align: center;
+    color: white;
+    .story-header {
+        margin-top: 100px;
+        span {
+            font-family: 'Palatino Linotype', sans-serif;
+            font-style: italic;
+            font-size: 50px;
+        }
+    }
+    .story-sh {
+        margin-top: 35px;
+        span {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bold;
+            font-size: 50px;
+        }
+    }
+    .story-text {
+        margin: 50px 457px 0px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 20px;
+    }
+
+}
+.story-button {
+    .btn {
+    margin-top: 55px;
+    margin-bottom: 90px;
+    height: 45px;
+    width: 146px;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    border-radius: 10px;
+    background-color: #f42267 !important;
+    }
+}

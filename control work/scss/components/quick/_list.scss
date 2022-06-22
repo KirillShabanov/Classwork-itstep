@@ -1,0 +1,123 @@
+.link-header {
+    margin-left: 340px;
+    margin-top: 125px;
+    span {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
+        font-size: 25px;
+        color: #4b2d7f;
+    }
+}
+.r-link-header {
+    margin-left: 100px;
+    margin-top: 125px;
+    span {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
+        font-size: 25px;
+        color: #4b2d7f;
+    }
+}
+.br-link-header {
+    margin-left: 100px;
+    margin-top: 55px;
+    span {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
+        font-size: 25px;
+        color: #4b2d7f;
+    }
+}
+.bl-link-header {
+    margin-left: 340px;
+    margin-top: 55px;
+    span {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
+        font-size: 25px;
+        color: #4b2d7f;
+    }
+}
+.tr-list {
+    ul {
+        margin-top: 20px;
+        display: block;
+        list-style-type: none;
+        li {
+            margin-top: 5px;
+            margin-right: 280px;
+            font-size: 15px;
+            a {
+                text-decoration: none;
+                span{
+                    font-family: 'Montserrat', sans-serif;
+                    font-weight: bold;
+                    color: #000;
+                }
+            }
+        }
+    }
+}
+
+.tl-list {
+    ul {
+        margin-left: 200px;
+        margin-top: 20px;
+        display: block;
+        list-style-type: none;
+        li {
+            margin-top: 5px;
+            font-size: 15px;
+            a {
+                text-decoration: none;
+                span{
+                    font-family: 'Montserrat', sans-serif;
+                    font-weight: bold;
+                    color: #000;
+                }
+            }
+        }
+    }
+}
+
+.br-list {
+    ul {
+        margin-top: 20px;
+        display: block;
+        list-style-type: none;
+        li {
+            margin-top: 5px;
+            margin-right: 280px;
+            font-size: 15px;
+            a {
+                text-decoration: none;
+                span{
+                    font-family: 'Montserrat', sans-serif;
+                    font-weight: bold;
+                    color: #000;
+                }
+            }
+        }
+    }
+}
+
+.bl-list {
+    ul {
+        margin-top: 20px;
+        display: block;
+        list-style-type: none;
+        li {
+            margin-top: 5px;
+            margin-left: 303px;
+            font-size: 15px;
+            a {
+                text-decoration: none;
+                span{
+                    font-family: 'Montserrat', sans-serif;
+                    font-weight: bold;
+                    color: #000;
+                }
+            }
+        }
+    }
+}

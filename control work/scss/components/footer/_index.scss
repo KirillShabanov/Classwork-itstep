@@ -1,0 +1,24 @@
+.footer-list {
+    ul{
+        .first:before {
+            content: "";
+        }
+        margin-right: 560px;
+        display: flex;
+        li:before {
+            content: "∙";
+            font-size: 30px;
+            margin-right: 10px;
+        }
+        li {
+            justify-content: center;
+            span {
+                font-family: 'Poppins', sans-serif;
+        font-weight: bold;
+        font-size: 19px;
+                color: #000;
+            }
+            
+        }
+    }
+}
