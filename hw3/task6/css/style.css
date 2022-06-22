@@ -1,0 +1,29 @@
+td {
+    border: 1px solid black;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+}
+th {border: 1px solid black;}
+table {
+    border-collapse: collapse;
+}
+#othmon {color: gray;}
+ td:nth-child(n+6) {color: red;}
+ .bloodholid {
+     color: red;
+     background: url(../img/blood.jpg);
+     background-size: cover;
+ }
+ .seaholid {
+    color: red;
+    background-image: url(../img/sea.jpg);
+    background-size: cover;  
+ }
+ .astholid {
+    color: red;
+    background-image: url(../img/ast.jpg);
+    background-size: cover;   
+ }

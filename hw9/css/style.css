@@ -1,0 +1,182 @@
+html,body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    position: relative;
+    display: flex;
+    width: 100%;
+    padding: 10px 20px;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.catbody {
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    background: rgb(230, 90, 35);
+    border-radius: 100px / 50px;
+}
+.cathead {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: rgb(230, 90, 35);
+    border-radius: 50%;
+    left: -62px;
+}
+.cateye1 {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background:black;
+    border-radius: 50%;
+    left: -4px;
+    top: 37px;
+}
+.cateye2 {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: black;
+    border-radius: 50%;
+    left: -40px;
+    top: 35px; 
+}
+.catleg1 {
+    position: absolute;
+    width: 19px;
+    height: 79px;
+    background: rgb(230, 90, 35);
+    top: 96px;
+    left: 163px;
+    transition-property: transform ;
+    transition-duration: 1s ;
+}
+.catleg1:hover {
+transform: rotate(10deg);
+}
+a {
+    position: fixed;
+    background: black;
+    color: white;
+    top: 5px;
+    padding: 5px;
+
+}
+.catleg2 {
+    position: absolute;
+    width: 19px;
+    height: 79px;
+    background: rgb(230, 90, 35);
+    top: 99px;
+    left: 55px;
+}
+.lear {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 40px solid rgb(230, 90, 35);
+    border-right: 40px solid transparent;
+    top: 16px;
+    left: -59px;
+    transition-property: top ;
+    transition-duration: 1s ;
+}
+.lear:hover {
+top: 10px;
+}
+.start {
+    left: 482px;
+}
+.rear {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 40px solid rgb(230, 90, 35);
+    border-left: 40px solid transparent;
+    left: -14px;
+    top: 14px;
+}
+.mouth
+{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: rgb(66, 58, 58);
+    border-radius: 100px / 100px;
+    top: 57px;
+    left: -25px
+}
+
+.lms1 {
+    position: absolute;
+
+    top: 55px;
+    left: -12px;
+    width: 30px;
+    height: 2px;
+    background: black;
+    transform: rotate(-30deg);
+}
+.lms2 {
+    position: absolute;
+    top: 75px;
+    left: -12px;
+    width: 30px;
+    height: 2px;
+    background: black;
+    transform: rotate(30deg);
+}
+.rms1 {
+    position: absolute;
+    top: 76px;
+    left: -47px;
+    width: 30px;
+    height: 2px;
+    background: black;
+    transform: rotate(-30deg);
+
+}
+.rms2 {
+    position: absolute;
+    top: 59px;
+    left: -46px;
+    width: 30px;
+    height: 2px;
+    background: black;
+    transform: rotate(30deg);
+}
+#box:target .catbody {
+    animation: color 4s linear infinite,rotate 4s linear 2;
+}
+#box:target .mouth{
+    animation: bigger 4s linear infinite;
+}
+
+@keyframes color{
+    from{
+        background: rgb(230, 90, 35);
+    }
+    to{
+        background: rgb(81, 38, 182);
+    }
+}
+@keyframes bigger{
+    0%{
+        width: 20px;
+        height: 20px;
+    }
+    50%{
+        width: 30px;
+        height: 30px;
+    }
+    100%{
+        width: 40px;
+        height: 40px;
+    }
+}

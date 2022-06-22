@@ -1,0 +1,14 @@
+tr td:nth-child(2) {
+    width: 300px;
+    text-align: left;
+}
+tr td:nth-child(1) {width: 30px;}
+tr td:nth-child(n+3) {width: 150px;}
+tr:nth-child(1) {
+    font-weight: 600;
+    background: #4e82be;
+    color:white
+}
+td {text-align: center;}
+tr:nth-child(even) {background-color: #d1d9e9;}
+tr:nth-child(2n+3) {background-color: #eaeef4;}

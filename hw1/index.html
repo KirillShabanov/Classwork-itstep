@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>css</title>     
+</head>
+<link rel="stylesheet" href="./css/style.css">
+<body>
+    <h2>Меню для навигации</h2>
+    <ol>
+        <li><a href="#menu1">CSS</a></li>
+        <li><a href="#menu2">Способы подключения CSS к документу</a></li>
+        <li><a href="#menu3">Правила построения CSS</a></li>
+        <li><a href="#menu4">Пример таблицы стилей</a></li>
+    </ol>
+    <h1 id="menu1">CSS</h1>
+    <p>
+        <strong>CSS</strong> ( англ. <em>Cascading Style Sheets</em> — каскадные таблицы стилей) — формальный язык описания внешнего вида документа, 
+    написанного с использованием языка разметки.
+    Преимущественно используется как средство описания, оформления внешнего вида веб-страниц, 
+    написанных с помощью языков разметки <a href="https://ru.wikipedia.org/wiki/HTML">HTML</a> и <a href="https://ru.wikipedia.org/wiki/XHTML">XHTML</a>, но может также применяться к любым <a href="https://ru.wikipedia.org/wiki/XML">XML-документам</a>, 
+    например, к SVG или XUL.
+    </p>
+    
+    <h2 id="menu2">Способы подключения CSS к документу</h2>
+    
+    <p>
+        Правила <b>CSS</b> пишутся на формальном языке <b>CSS</b> и располагаются в таблицах стилей, то есть таблицы стилей содержат в себе правила <b>CSS</b>. 
+    Эти таблицы стилей могут располагаться как в самом веб-документе, внешний вид которого они описывают, так и в отдельных файлах, имеющих формат <b>CSS</b>. 
+    (По сути, формат <b>CSS</b> — это обычный текстовый файл. В файле .css не содержится ничего, кроме перечня правил <b>CSS</b> и комментариев к ним.)
+    То есть, эти таблицы стилей могут быть подключены, внедрены в описываемый ими веб-документ четырьмя различными способами:
+    
+<ul>
+    <li>когда таблица стилей находится в отдельном файле, она может быть подключена к веб-документу посредством тега <span class="green">&lt;link&gt;</span>, 
+        располагающегося в этом документе между тегами <span class="green">&lt;head&gt;</span> и <span class="green">&lt;/head&gt;</span>. 
+        (Тег <span class="green">&lt;link&gt;</span> будет иметь атрибут <span class="blue">href</span>, имеющий значением адрес этой таблицы стилей).
+         Все правила этой таблицы действуют на протяжении всего документа;</li>
+     
+    <li>когда таблица стилей находится в отдельном файле, она может быть подключена к веб-документу посредством директивы @import,
+        располагающейся в этом документе между тегами <span class="green">&lt;style&gt;</span> и <span class="green">&lt;/style&gt;</span> 
+        (которые, в свою очередь, располагаются в этом документе между тегами <span class="green">&lt;head&gt;</span> и <span class="green">&lt;/head&gt;)</span> 
+        сразу после тега <span class="green">&lt;style&gt;</span>, которая также указывает (в своих скобках, после слова url) на адрес этой таблицы стилей. 
+        Все правила этой таблицы действуют на протяжении всего документа;</li>
+     
+    <li>когда таблица стилей описана в самом документе, она может располагаться в нём между тегами <span class="green">&lt;style&gt;</span> и <span class="green">&lt;/style&gt;</span> 
+        (которые, в свою очередь, располагаются в этом документе между тегами <span class="green">&lt;head&gt;</span> и <span class="green">&lt;/head&gt;</span>). 
+        Все правила этой таблицы действуют на протяжении всего документа;</li>
+    
+    <li>когда таблица стилей описана в самом документе, она может располагаться в нём в теле какого-то отдельного тега (
+        посредством его атрибута <span class="blue">style</span>) этого документа.</li>
+     Все правила этой таблицы действуют только на содержимое этого тега. </p>
+</ul>
+    <h2 id="menu3">Правила построения CSS</h2>
+    
+    <p>
+        В первых трёх случаях подключения таблицы <b>CSS</b> к документу (см. выше) каждое правило <b>CSS</b> из таблицы стилей имеет две основные части — 
+    селектор и блок объявлений. Селектор, расположенный в левой части правила, определяет, на какие части документа распространяется правило.
+     Блок объявлений располагается в правой части правила. Он помещается в фигурные скобки, и, в свою очередь, состоит из одного или более объявлений,
+     разделённых знаком «;». Каждое объявление представляет собой сочетание свойства <b>CSS</b> и значения, разделённых знаком ": ". 
+     Селекторы могут группироваться в одной строке через запятую. 
+    В таком случае свойство применяется к каждому из них.
+    </p>
+    
+    <h2 id="menu4">Пример таблицы стилей</h2>
+    
+    <p>
+        Пример таблицы стилей (в таком виде она может быть либо размещена в отдельном файле .css либо же обрамлена тегами &lt;style&gt; 
+    и размещена в «шапке» той самой веб-страницы, на которую она действует):
+    </p>
+    
+   <pre>
+    <span class="orange">p</span> <span class="white">{</span>
+        <span class="lazy">font-family</span><span class="white">:</span> <span class="red">arial</span><span class="white">,</span> <span class="red">helvetica</span><span class="white">,</span> <span class="red">sans-serif</span><span class="white">;</span> 
+     <span class="white">}</span>
+     <span class="orange">h2</span><span class="white">{</span>
+        <span class="lazy">font-size</span><span class="white">:</span> <span class="lgreen">20pt</span><span class="white">;</span> 
+        <span class="lazy">color</span><span class="white">:</span><span class="red">red</span><span class="white">;</span> 
+        <span class="lazy">background</span><span class="white">:</span><span class="red">white</span><span class="">; 
+     }
+     <span class="orange">.note</span> {
+        <span class="lazy">color</span>: <span class="red">red</span>; 
+        <span class="lazy">background-color</span> <span class="red">yellow</span>; 
+        <span class="lazy">font-weight</span> <span class="red">bold</span>; 
+     }
+     <span class="orange">p#paragraph1</span> {
+        <span class="lazy">padding-left</span>: <span class="lgreen">10px</span>;
+     }
+   </pre>
+      
+</body>
+</html>

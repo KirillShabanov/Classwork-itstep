@@ -1,0 +1,23 @@
+p {
+    font-size: 30px;
+    color: #808080;
+    letter-spacing: 2px;
+    word-spacing: 20px;
+}
+ins + span {
+    text-decoration: overline;
+}
+.primnum {
+    font-weight: 900;
+}
+ins del { text-shadow: 5px 5px 5px orange;}
+ins del.primnum { font-size: 35px;}
+.clpink {color: rgba(255, 192, 203, 0.5);}
+.square {
+   color: white;
+   text-shadow: 0 0 0 orange;
+}
+
+.square:hover {
+    color: gray
+}

@@ -1,0 +1,15 @@
+td {
+    width: 300px;
+    height: 150px;
+    border: 5px solid #000;
+}
+table {
+    background-color: rgb(153, 1, 1);
+    border-collapse: collapse;
+    font-weight: 600;
+    color: white;
+    font-size: 40px;}
+    td:nth-child(1) {vertical-align: top;}
+    td:nth-child(3n) {vertical-align: bottom;}
+    tr:nth-child(2) {text-align: center;}
+    tr:nth-child(3) {text-align: right;}

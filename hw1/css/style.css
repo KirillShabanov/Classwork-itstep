@@ -1,0 +1,25 @@
+h1 {
+    font-size: 32px;
+    font-weight: 600;
+}
+h2 {
+    font-size: 24;
+    font-style: oblique;
+}
+body {
+    font-size: 14px;
+    font-style: normal;
+}
+.green { color: green;}
+.blue { color: blue;}
+.orange {color: rgb(233, 150, 41);}
+.lazy {color: rgb(117, 150, 212);}
+.red {color: rgb(199, 72, 72);}
+.lgreen {color: rgb(93, 235, 93);}
+.white { color: white;}
+pre {
+    background-color: black;
+}
+
+ 
+ 
