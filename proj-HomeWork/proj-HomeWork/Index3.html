@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+    <div id="container" class="m-4 col-xs-5">
+       
+    </div>
+    <button id ="send" type="button" class="btn btn-primary">Send</button>
+
+    <script>
+        var container = $("#container");
+
+        var value=-1;
+        
+//console.log
+(container);
+        createRadioButtons();
+        $("#send").click(function(){
+            for (let i=0; i<10; i++){
+            if ($("#radio"+i).is(':checked')){
+	            var value = i+1;
+            } 
+    }
+    console.log(value);
+        });
+
+        function createRadioButtons(){
+        for (let i=0; i<10; i++){
+        var div = $('<div>').addClass("form-check");
+        container.append(div);
+        var input = $('<input>').addClass("form-check-input");
+        input.attr("type",'radio');
+        input.attr('name',"flexRadioDefault");        
+        let id = 'radio'+i;
+        input.attr("id",id);
+        input.attr("checked",false);
+        div.append(input);
+
+        var label = $('<label>').addClass("form-check-label");
+            label.attr("for",id);
+            label.html(i+1);
+        div.append(label);
+        }
+    }
+    </script>
+</body>
+</html> 
