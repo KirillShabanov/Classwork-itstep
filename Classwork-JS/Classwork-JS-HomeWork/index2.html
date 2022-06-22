@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English words</title>
+    <link rel="stylesheet" href = "css/w3.css">
+    <link rel="stylesheet" href = "css/style.css">
+    <script src="js/jquery.js"></script>.
+    <script src="js/all.min.js"></script>
+    <script src="js/icons.js"></script>
+    
+
+</head>
+<body>
+    <div id="container" class="w3-container w3-card w3-margin w3-padding-16">
+        <h3>English words</h3>
+        <form class="w3-container">
+            <div class="w3-section">
+              <label>Regular Expression</label>
+              <input class="w3-input" type="text" id = "regexp">
+            </div>  		
+            <div class="w3-section">
+                <button type="button" class="w3-btn w3-padding w3-teal" style="width:120px" id = "ok">OK</button>			
+            </div>
+          </form>
+    </div>
+</body>
+<script>
+    var words2=[];
+    $("#ok").click(function(){
+        words2=[];
+    $("#table").remove();
+    console.log($("#regexp").val());
+    for (var i = 0; i<words.length; i++)
+    if (words[i].search($("#regexp").val())!=-1)     
+    words2.push(words[i]);
+    var table = $('<table>');
+        table.attr('id','table')
+        
+var tbody = $('<tbody>');
+table.append(tbody);
+for(var i=0; i<9; i++){
+    var tr = $('<tr>');
+    tbody.append(tr);
+    for (var j=0; j<9; j++){
+        var td = $('<td>').html(words2[i*10+j]);
+        tr.append(td);
+        if (i%2==0) td.addClass('w3-light-grey');
+        else td.addClass('w3-sand');
+    }
+}
+table.addClass('w3-table w3-bordered w3-small');
+$('#container').append(table);
+    });
+</script>
+
+</html>

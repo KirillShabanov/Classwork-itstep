@@ -1,0 +1,100 @@
+Создать таблицу карт (от 6 до туза) и их мастей
+create temporary table ranks(name varchar(2));
+create temporary table suits(name varchar(10));
+INSERT INTO ranks(name) VALUES('6'),('7'),('8'),('9'),('10'),('В'),('Д'),('К'),('Т');
+INSERT INTO suits(name) VALUES ('пики'),('червы'),('бубны'),('трефы');
+create temporary table cards as select * from ranks cross join suits;
+select * from cards;
+
+CREATE temporary TABLE t1(v1 INT);
+INSERT INTO t1(v1) VALUES(1),(2),(3);
+CREATE temporary TABLE t2(v2 INT);
+INSERT INTO t2(v2) VALUES(2),(3),(4);
+
+select * from t1 union select * from t2;
+select * from t1 union all select * from t2;
+select * from t1 except select * from t2;
+select * from t1 intersect select * from t2;
+select * from t1 inner join t2 on v1=v2;
+
+Создать триггер, который добавляет в новую таблицу территории при добавлении ее в основную таблицу
+
+create table new_territories(id INTEGER PRIMARY KEY autoincrement, name text not null);
+CREATE TRIGGER add_territory AFTER INSERT ON territories
+BEGIN
+INSERT INTO new_territories(name) VALUES (new.territory_description);
+END;
+insert into territories(territory_id, territory_description, region_id) values(98110, 'new territory 1',1);
+SELECT * FROM new_territories;
+Создать триггер, который проверяет название добавляемой территории (название не менее двух букв)
+select * from sqlite_master where type = 'trigger';
+
+CREATE TRIGGER validate_territory_before_insert
+BEFORE INSERT ON territories
+BEGIN
+SELECT CASE WHEN
+new.territory_description NOT LIKE '%__' THEN
+RAISE (ABORT, 'Invalid name of territory')
+END;
+END;
+insert into territories(territory_id, territory_description, region_id) values(98111, '12',1);
+
+DROP TRIGGER IF EXISTS validate_territory_before_insert;
+
+SELECT * FROM new_territories;
+
+SELECT * FROM products LIMIT 10;
+CREATE INDEX ind_products ON products(product_name);
+SELECT product_name FROM products WHERE product_name LIKE 'a%';
+PRAGMA index_list(products);
+.indices
+.indices products
+EXPLAIN QUERY PLAN SELECT product_name FROM products WHERE product_name LIKE 'b%';
+CREATE TABLE accounts ( 
+	account_no INTEGER NOT NULL, 
+	balance DECIMAL NOT NULL DEFAULT 0,
+	PRIMARY KEY(account_no),
+        CHECK(balance >= 0)
+);
+
+CREATE TABLE account_changes (
+	change_no integer PRIMARY KEY autoincrement,
+	account_no INTEGER NOT NULL, 
+	flag TEXT NOT NULL, 
+	amount DECIMAL NOT NULL, 
+	changed_at TEXT NOT NULL 
+);
+
+INSERT INTO accounts (account_no,balance) VALUES (100,2000);
+INSERT INTO accounts (account_no,balance) VALUES (200,1000);
+
+SELECT * FROM accounts;
+
+BEGIN TRANSACTION;
+UPDATE accounts SET balance = balance - 100 WHERE account_no = 100;
+UPDATE accounts SET balance = balance + 100 WHERE account_no = 200;
+INSERT INTO account_changes(account_no,flag,amount,changed_at) 
+VALUES(100,'-',100,datetime('now'));
+
+INSERT INTO account_changes(account_no,flag,amount,changed_at) 
+VALUES(200,'+',100,datetime('now'));
+
+SELECT * FROM accounts;
+SELECT * FROM account_changes;
+COMMIT;
+
+BEGIN TRANSACTION;
+UPDATE accounts
+   SET balance = balance - 20000
+ WHERE account_no = 100;
+INSERT INTO account_changes(account_no,flag,amount,changed_at) 
+VALUES(100,'-',20000,datetime('now'));
+SELECT * FROM account_changes;
+ROLLBACK;
+SELECT * FROM account_changes;
+
+
+drop table if exists accounts;
+drop table if exists account_changes;
+ 
+

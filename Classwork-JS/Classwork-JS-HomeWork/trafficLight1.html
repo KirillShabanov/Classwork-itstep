@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Traffic Light</title>
+        <link rel="stylesheet" href = "css/w3.css">
+        <link rel="stylesheet" href = "css/style.css">
+        <script src="js/jquery.js"></script>
+    </head>
+        <body>
+            <div id="traffic">
+                <div class="red" id ="red">
+
+                </div>
+                <div class="yellow" id ="yellow">
+
+                </div>
+                <div class="green" id ="green">
+
+                </div>
+            </div>
+        </body>
+        <script>
+
+            $(document).ready(function(){
+            var state = 0;
+            setInterval(function (){
+                switch (state) {
+                    case 0: 
+                            state = 1;
+                            $('#yellow').css({'opacity': '0.3'});
+                            $('#red').css({'opacity': '1'});
+                            break;
+                    case 1:
+                            state = 2;
+                            $('#red').css({'opacity': '0.3'});
+                            $('#yellow').css({'opacity': '1'});
+                            break;
+                    case 2:
+                            state = 3;
+                            $('#yellow').css({'opacity': '0.3'});
+                            $('#green').css({'opacity': '1'});
+                            break;
+                    case 3:
+                            state = 0;
+                            $('#green').css({'opacity': '0.3'});
+                            $('#yellow').css({'opacity': '1'});
+                            break;                
+                }
+            }, 1000);
+        });
+        </script>
+</html>
+   

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Traffic Light</title>
+        <link rel="stylesheet" href = "css/w3.css">
+        <link rel="stylesheet" href = "css/style.css">
+        <script src="js/jquery.js"></script>
+    </head>
+        <body>
+            <div id="traffic">
+                <div class="red" id ="red">
+
+                </div>
+                <div class="yellow" id ="yellow">
+
+                </div>
+                <div class="green" id ="green">
+
+                </div>
+            </div>
+        </body>
+        <script>
+            
+            $('#red').on("mouseover", function (){
+                $('#red').css({'opacity' : '1'});
+            });    
+            
+            $('#red').on("mouseout", function (){
+                $('#red').css({'opacity' : '0.3'});
+                    
+            });
+
+            $('#yellow').on("mouseover", function (){
+                $('#yellow').css({'opacity' : '1'});
+            });    
+            
+            $('#yellow').on("mouseout", function (){
+                $('#yellow').css({'opacity' : '0.3'});
+                    
+            });
+
+            $('#green').on("mouseover", function (){
+                $('#green').css({'opacity' : '1'});
+            });    
+            
+            $('#green').on("mouseout", function (){
+                $('#green').css({'opacity' : '0.3'});
+                    
+            });
+           
+        </script>
+</html>   

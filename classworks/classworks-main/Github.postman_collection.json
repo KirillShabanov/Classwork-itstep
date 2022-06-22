@@ -1,0 +1,393 @@
+{
+	"info": {
+		"_postman_id": "d589ce0c-12f8-427e-8ef6-2e421bde8762",
+		"name": "Github",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get author",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.github.com/users/KirillovItstep",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"users",
+						"KirillovItstep"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get repositories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.github.com/users/KirillovItstep/repos",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"users",
+						"KirillovItstep",
+						"repos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create repository",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"sampleAPI4\",\r\n  \"description\": \"Created using API\",\r\n  \"homepage\": \"https://github.com\",\r\n  \"private\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.github.com/user/repos",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"user",
+						"repos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete repository",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "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",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "KirillovItstep",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "https://api.github.com/repos/KirillovItstep/sampleAPI3",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"repos",
+						"KirillovItstep",
+						"sampleAPI3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update repository",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "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",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "KirillovItstep",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"sampleAPI1\"\r\n}"
+				},
+				"url": {
+					"raw": "https://api.github.com/repos/KirillovItstep/sampleAPI4",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"repos",
+						"KirillovItstep",
+						"sampleAPI4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create folder",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "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",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "KirillovItstep",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \r\n  \"message\":\"hello folder 2\",\r\n    \"content\":\"\"\r\n}"
+				},
+				"url": {
+					"raw": "https://api.github.com/repos/KirillovItstep/sampleAPI1/contents/helloFolder3",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"repos",
+						"KirillovItstep",
+						"sampleAPI1",
+						"contents",
+						"helloFolder3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload file",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"message\":\"message sdfsd\",\r\n\"content\":\"привет\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.github.com/repos/KirillovItstep/sampleAPI1/contents/hello2.txt",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"repos",
+						"KirillovItstep",
+						"sampleAPI1",
+						"contents",
+						"hello2.txt"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update file",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "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",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "KirillovItstep",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \r\n  \"message\":\"hello 3\",  \r\n  \"content\":\"0L/RgNC40LI=\",\r\n  \"sha\": \"abb591616c8fdef7b22d8e66360d244aacf879c7\"\r\n}"
+				},
+				"url": {
+					"raw": "https://api.github.com/repos/KirillovItstep/sampleAPI1/contents/hello.txt",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"repos",
+						"KirillovItstep",
+						"sampleAPI1",
+						"contents",
+						"hello.txt"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get file",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.github.com/repos/KirillovItstep/sampleAPI1/contents/hello.txt",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"repos",
+						"KirillovItstep",
+						"sampleAPI1",
+						"contents",
+						"hello.txt"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete file",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{      \r\n    \"message\": \"deleted\",\r\n  \"sha\": \"10d6007d2cf1cb55b9614f001c474285ff68e347\"\r\n}"
+				},
+				"url": {
+					"raw": "https://api.github.com/repos/KirillovItstep/sampleAPI1/contents/hello.txt",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"repos",
+						"KirillovItstep",
+						"sampleAPI1",
+						"contents",
+						"hello.txt"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get archive",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.github.com/repos/KirillovItstep/sampleAPI1/zipball",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"repos",
+						"KirillovItstep",
+						"sampleAPI1",
+						"zipball"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "username",
+				"value": "KirillovItStep",
+				"type": "string"
+			},
+			{
+				"key": "password",
+				"value": "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",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

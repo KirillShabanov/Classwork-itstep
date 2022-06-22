@@ -1,0 +1,92 @@
+Создать в каталоге файл C0
+cd D:/Step/Github/sample26
+
+Создать репозиторий
+git init
+
+Добавить файл
+git add file.txt
+
+Посмотреть файлы
+git ls-files
+
+Выполнить коммит
+git commit -m "C0"
+
+Посмотреть историю
+git log
+
+Изменить файл и добавить в новый коммит
+git add file.txt
+git rm --cached C0.txt
+
+Коммит 1
+git commit -m "C1"
+
+Посмотреть историю изменений
+git shortlog
+
+Посмотреть авторов изменений
+git shortlog -sne
+
+Посмотреть историю и авторов
+git log --pretty=format:"%h%x09%an%x09%ad%x09%s"
+
+Коммит 2
+git commit -m "C2"
+
+Создать ветку
+git checkout -b iss53
+
+Или, за 2 комманды
+git branch iss53
+git checkout iss53
+
+Коммит 3 в ветке iss53
+git commit -m "C3"
+
+Переключиться на предыдущую ветку и посмотреть log
+git checkout master
+git log --pretty=format:"%h%x09%an%x09%ad%x09%s"
+
+Переключиться назад на ветку iss53
+git checkout iss53
+git log --pretty=format:"%h%x09%an%x09%ad%x09%s"
+
+Переключиться на master и сделать новый коммит
+git checkout master
+git checkout -b hotfix
+Изменить файл
+git commit -m 'hotfix'
+
+Слить в ветку master ветку hotfix
+git checkout master
+git merge hotfix
+
+Удалить ветку hotfix
+git branch -d hotfix
+
+Вернуться в iss53
+git checkout iss53
+
+Сделать изменения в iss53
+git commit -a -m 'C5'
+
+Слить в master ветку iss53 (конфликт)
+git checkout master
+git merge iss53
+
+Проверяем статус
+git status
+
+Посмотреть файл, из-за которого конфликт
+cat file.txt
+
+Удалить в редакторе разделители конфликта
+
+Выполнить коммит
+git commit -m "C4C5"
+
+Все равно ошибка, повторно добавить файл
+git add file.txt
+git commit -m "C4C5"
