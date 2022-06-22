@@ -1,0 +1,2 @@
+It's my first string
+It's my second string
