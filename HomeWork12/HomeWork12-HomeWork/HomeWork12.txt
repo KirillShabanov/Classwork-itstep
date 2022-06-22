@@ -1,0 +1,150 @@
+.open homework12.db
+.tables
+.mode box
+
+
+/*********************** Task 1 ***********************/
+/****** Вывести количество альбомов ******/
+SELECT COUNT(Title) FROM Album;
+/*********************** Task 2 ***********************/
+/****** Вывести 10 первых альбомов по алфавиту ******/
+SELECT Title FROM Album WHERE AlbumId < 11 ORDER BY Title ASC;
+/*********************** Task 3 ***********************/
+/****** Вывести 10 последних альбомов по алфавиту ******/
+SELECT COUNT(Title) FROM Album;
+SELECT Title FROM Album WHERE AlbumId > 337 ORDER BY Title ASC;
+/*********************** Task 4 ***********************/
+/****** Вывести все фонограммы под названием 'Iron Maiden' ******/
+SELECT * FROM Track WHERE Name = 'Iron Maiden';
+/*********************** Task 5 ***********************/
+/****** Вывести все фонограммы группы (композитора) 'Nirvana' ******/
+SELECT * FROM Track WHERE Composer = 'Nirvana';
+/*********************** Task 6 ***********************/
+/****** Вывести 10 фонограмм, не имеющих автора (композитора) ******/
+SELECT * FROM Track WHERE Composer IS NULL LIMIT 10;
+/*********************** Task 7 ***********************/
+/****** Вывести список городов покупателей ******/
+SELECT City FROM Customer;
+/*********************** Task 8 ***********************/
+/****** Вывести список различных городов покупателей ******/
+SELECT DISTINCT City FROM Customer;
+/*********************** Task 9 ***********************/
+/****** Вывести список различных городов и стран покупателей ******/
+SELECT DISTINCT City, Country FROM Customer;
+/*********************** Task 10 ***********************/
+/****** Вывести различные компании покупателей ******/
+SELECT DISTINCT Company FROM Customer;
+/*********************** Task 11 ***********************/
+/****** Количество покупателей, не указавших свою компанию ******/
+SELECT COUNT(CustomerId) FROM Customer WHERE Company IS NULL;
+/*********************** Task 12 ***********************/
+/****** Вывести название самой короткой и самой длинной фонограммы ******/
+SELECT Track.Name, (MIN(Milliseconds)) as Milliseconds FROM Track;
+SELECT Track.Name, (MAX(Milliseconds)) as Milliseconds FROM Track;
+/*********************** Task 13 ***********************/
+/****** Вывести названия альбомов, имя композитора которых включает 'Smith' ******/
+SELECT DISTINCT Title, Composer FROM Album  INNER JOIN Track ON Album.AlbumId = Track.AlbumId WHERE Track.Composer LIKE '%Smith%';
+/*********************** Task 14 ***********************/
+/****** Вывести названия альбомов, в которые входит слово 'Princess' ******/
+/******!!!! В БД нет альбомов, отвечающих таким требованиям!!!!!! ******/
+SELECT Title FROM Album WHERE Album.Title LIKE '%Princess%';
+/*********************** Task 15 ***********************/
+/****** Вывести название альбома с самым длинным списком композиторов ******/
+SELECT Title, Composer FROM Album  INNER JOIN Track ON Album.AlbumId = Track.AlbumId WHERE LENGTH (Track.Composer)>150;
+/*********************** Task 16 ***********************/
+/****** Вывести название альбома с длиной имени композитора от 3 до 5 ******/
+SELECT DISTINCT Title, Composer FROM Album  INNER JOIN Track ON Album.AlbumId = Track.AlbumId WHERE Track.Composer LIKE '___'
+OR Track.Composer LIKE '____'
+OR Track.Composer LIKE '_____';
+/*********************** Task 17 ***********************/
+/****** Вывести название альбома с длиной имени композитора от 3 до 5 (второй десяток) ******/
+SELECT DISTINCT Title, Composer FROM Album  INNER JOIN Track ON Album.AlbumId = Track.AlbumId WHERE Track.Composer LIKE '___'
+OR Track.Composer LIKE '____'
+OR Track.Composer LIKE '_____'
+LIMIT 100
+OFFSET 10;
+/*********************** Task 18 ***********************/
+/****** Вывести счета об оплате от 9$ до 12$ ******/
+SELECT * FROM Invoice WHERE Total > 9 AND Total <= 12;
+/*********************** Task 19 ***********************/
+/****** За какие треки и кто заплатил больше 20$ ******/
+SELECT Track.Name, Invoice.Total, Customer.FirstName FROM Track
+JOIN InvoiceLine ON Track.TrackId = InvoiceLine.TrackId
+JOIN Invoice ON InvoiceLine.InvoiceId = Invoice.InvoiceId
+JOIN Customer ON Invoice.CustomerId = Customer.CustomerId
+WHERE Invoice.Total > 20 
+ORDER BY Customer.FirstName ASC;
+/*********************** Task 20 ***********************/
+/****** Вывести все счета об оплате за январь 2010 г. ******/
+SELECT InvoiceId, InvoiceDate FROM Invoice WHERE InvoiceDate LIKE '2010/1/%';
+/*********************** Task 21 ***********************/
+/****** Для исполнителя 'Queen' вывести название трека и альбома ******/
+SELECT Track.Name AS "Track Name", Album.Title AS "Album Name", Artist.Name AS "Artist Name"
+FROM Track
+JOIN Album ON Track.AlbumId = Album.AlbumId
+JOIN Artist ON Album.ArtistId = Artist.ArtistId
+WHERE Artist.Name = 'Queen';
+/*********************** Task 22 ***********************/
+/****** Вывести название трека, которое включает слово 'Man' ******/
+SELECT Name FROM Track WHERE Name LIKE '%Man'
+OR Name LIKE '%Man %';
+/*********************** Task 23 ***********************/
+/****** Вывести 10 треков, название которых включает цифры ******/
+SELECT DISTINCT Name FROM Track WHERE Track.Name LIKE '%0%'
+	OR Track.Name LIKE '%1%'
+	OR Track.Name LIKE '%2%'
+	OR Track.Name LIKE '%3%'
+	OR Track.Name LIKE '%4%'
+	OR Track.Name LIKE '%5%'
+	OR Track.Name LIKE '%6%'
+	OR Track.Name LIKE '%7%'
+	OR Track.Name LIKE '%8%'
+	OR Track.Name LIKE '%9%'
+	LIMIT 10;
+/*********************** Task 24 ***********************/
+/****** Вывести 10 треков, название которых заканчивается цифрами ******/
+SELECT DISTINCT Name FROM Track WHERE Track.Name LIKE '%0'
+	OR Track.Name LIKE '%1'
+	OR Track.Name LIKE '%2'
+	OR Track.Name LIKE '%3'
+	OR Track.Name LIKE '%4'
+	OR Track.Name LIKE '%5'
+	OR Track.Name LIKE '%6'
+	OR Track.Name LIKE '%7'
+	OR Track.Name LIKE '%8'
+	OR Track.Name LIKE '%9'
+	LIMIT 10;
+/*********************** Task 25 ***********************/
+/****** Выбрать название трека и его исполнтеля (10 треков) ******/
+SELECT Track.Name AS "Track Name", Artist.Name AS "Artist Name" 
+FROM Track
+JOIN Album ON Track.AlbumId = Album.AlbumId
+JOIN Artist ON Album.ArtistId = Artist.ArtistId
+ORDER BY Track.Name ASC
+LIMIT 10;
+/*********************** Task 26 ***********************/ 
+/****** Выбрать название трека, исполнителя и композитора (10 треков) ******/
+SELECT Track.Name AS "Track Name", Artist.Name AS "Artist Name", Track.Composer AS "Composer Name"
+FROM Track
+JOIN Album ON Track.AlbumId = Album.AlbumId
+JOIN Artist ON Album.ArtistId = Artist.ArtistId
+ORDER BY Track.Name ASC
+LIMIT 10;
+/*********************** Task 27 ***********************/ 
+/****** Вывести исполнителей безымянных альбомов ******/
+/******!!!! В БД нет альбомов, отвечающих таким требованиям!!!!!! ******/
+SELECT Artist.Name AS "Artist Name", Album.Title AS "Album name" 
+FROM Artist
+JOIN Album ON Album.ArtistId = Artist.ArtistId
+WHERE Album.Title IS NULL;
+/*********************** Task 28 ***********************/
+/****** Вывести список служащих, живущих в одинаковых городах (земляков). Использовать self join. ******/
+SELECT  a.City, (a.Firstname || ' ' || a.Lastname) employee1, (b.Firstname || ' ' || b.Lastname) employee2
+FROM Employee a JOIN Employee b ON a.employeeid > b.employeeid AND a.City = b.City
+ORDER BY a.City DESC, employee1, employee2;
+/*********************** Task 29 ***********************/
+/****** Сколько в каждом альбоме треков ******/
+SELECT Album.Title AS "Album Name", COUNT(Track.TrackId) AS "Count tracks" 
+FROM Album
+JOIN Track ON Album.AlbumId = Track.AlbumId
+GROUP BY Album.Title;

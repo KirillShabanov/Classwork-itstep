@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyWorkTime</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+            <div class="header">
+             <a href="" class ="logo">
+                 <span class ="logo_img"></span></a>
+             <nav>
+                <ul class ="nav">
+                    <li><a href ="">Зарегестрированные пользователи</a></li>
+                    <li><a href ="">Помощь</a></li>
+                    <li><a href ="http://127.0.0.1:5500/Index4.html">О программе</a></li>
+                    </ul>
+                 </nav>
+            </div>    
+    </header>
+    <div class="pages">
+        <div class="wrap1">
+            <div class="h1">Моё рабочее время</div>
+        </div>
+    </div>
+    <form action="/action_page.php">
+        <div class="registor">
+            <div class="pages">
+                <div class="wrap2">
+                    <div class="container_login">
+                        <h1>Окно авторизации</h1>
+                        <p>Пожалуйста, введите Ваши данные.</p>
+                        <hr>
+                        
+                        <label for="login">
+                            <b>Логин</b>
+                        </label>
+                        <input type="text" placeholder="Введите логин" name ="login" required>
+
+                        <label for="password">
+                            <b>Пароль</b>
+                        </label>
+                        <input type="text" placeholder="Введите пароль" name ="password" required>
+                        <hr>
+
+                        <button type="submit" class="submitbtn">
+                            Подтвердить
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="info">
+            <div class="pages_info">
+                <div class="wrap3">
+                    <table border="3" width="100%" cellpadding="5">
+                        <tr>
+                            <th>Ячейка1</th>
+                            <th>Ячейка2</th>
+                        </tr>
+                        <tr>
+                            <th>ячейка3</th>
+                            <th>ячейка4</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

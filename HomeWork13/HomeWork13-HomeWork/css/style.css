@@ -1,0 +1,106 @@
+body {
+    font-family: 'Ubuntu', sans-serif;
+}
+.header {
+    width: 100%;
+    max-width: auto;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    font-weight: 700;
+    height: 60px;
+    background-color: rgb(136, 252, 106);
+}
+.nav {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 14px;
+}
+.nav>li {
+    margin-left: 15px;
+}
+.nav>li>a {
+    text-decoration: none;
+    color: white;
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+.logo_img {
+    display: block;
+    width: 200px;
+    height: 55px;
+    background-image: url(../img/logo.png);
+    margin-right: 20px;
+}
+.wrap1 {
+    width: 100%;
+    max-width: auto;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    height: 60px;
+    background-color: rgb(0, 0, 0);
+}
+.h1 {
+   display: block;
+   color: white;
+   font-size: 36px; 
+}
+
+.container_login {
+    padding: 15px;
+    background-color: rgb(226, 213, 194);
+}
+input [type=text], input [type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-flex;
+    border: none;
+    background: #f1f1f1;
+}
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+hr {
+    margin-bottom: 10px;
+}
+.submitbtn {
+    background-color: rgb(136, 252, 106);
+    color: rgb(252, 250, 250);
+    font-size: 21px;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.85;
+}
+.submitbtn:hover {
+    opacity: 1;
+}
+.wrap2 {
+    width: 100%;
+    max-width: auto;
+    margin: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    height: 601px;
+    background-color: rgb(226, 213, 194);
+}

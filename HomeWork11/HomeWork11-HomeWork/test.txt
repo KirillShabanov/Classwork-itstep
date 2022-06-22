@@ -1,0 +1,10 @@
+.open ClimbingClubChronicles.db
+PRAGMA FOREIGN_KEYS = on;
+.mode box
+
+
+
+
+SELECT the_mountains.title, ascent_rates.successful_attempts, ascent_rates.unsuccessful_attempts FROM the_mountains INNER JOIN ascent_rates ON the_mountains.id = attempts_id;
+
+

@@ -1,0 +1,295 @@
+.open ClimbingClubChronicles.db
+PRAGMA FOREIGN_KEYS = on;
+.mode box
+
+
+CREATE TABLE groups (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	name_group VARCHAR NOT NULL,
+	full_name_of_the_head VARCHAR NOT NULL);
+
+INSERT INTO groups (name_group, full_name_of_the_head)
+VALUES ('Эдельвейс', 'Шабанова Василиса Кирилловна');
+INSERT INTO groups (name_group, full_name_of_the_head)
+VALUES ('Белый орёл', 'Комлев Илья Юрьевич');
+INSERT INTO groups (name_group, full_name_of_the_head)
+VALUES ('Достучаться до небес', 'Егоренков Алексей Владимирович');
+INSERT INTO groups (name_group, full_name_of_the_head)
+VALUES ('Зелёные ботинки', 'Шляхто Сергей Юрьевич');
+
+
+CREATE TABLE climbers (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	full_name VARCHAR NOT NULL,
+	adress VARCHAR NOT NULL,
+	date_of_birth VARCHAR NOT NULL,
+	group_id INTEGER,
+	FOREIGN KEY (group_id) REFERENCES groups (id));
+
+INSERT INTO climbers (full_name, adress, date_of_birth, group_id)
+VALUES ('Шабанова Василиса Кирилловна', 'РБ, г.Витебск, ул.Баграмяна 11-157', '20.04.2018', '1');
+INSERT INTO climbers (full_name, adress, date_of_birth, group_id)
+VALUES ('Комлев Илья Юрьевич', 'РБ, г.Витебск, ул.К.Маркса 3-7', '12.03.1989', '2');
+INSERT INTO climbers (full_name, adress, date_of_birth, group_id)
+VALUES ('Егоренков Алексей Владимирович', 'РБ, г.Витебск, ул.М.Горького, 35-11', '05.07.1988', '3');
+INSERT INTO climbers (full_name, adress, date_of_birth, group_id)
+VALUES ('Шляхто Сергей Юрьевич', 'РБ, г.Витебск, ул.Богатырёва 13-57', '03.09.1990', '4');
+INSERT INTO climbers (full_name, adress, date_of_birth, group_id)
+VALUES ('Савченко Виктория Олеговна', 'РБ, г.Витебск, ул.39 Армии 24-4-100', '01.11.1969', '1');
+INSERT INTO climbers (full_name, adress, date_of_birth, group_id)
+VALUES ('Шабанова Кристина Васильевна', 'РБ, г.Витебск, ул.Баграмяна 11-157', '10.01.1991', '1');
+INSERT INTO climbers (full_name, adress, date_of_birth, group_id)
+VALUES ('Шабанов Кирилл Владимирович', 'РБ, г.Витебск, ул.Баграмяна 11-157', '14.10.1989', '1');
+INSERT INTO climbers (full_name, adress, date_of_birth, group_id)
+VALUES ('Мелех Артём Игоревич', 'РБ, г.Витебск, 39 Армии 24-4-100', '04.05.2006', '1');
+INSERT INTO climbers (full_name, adress, date_of_birth, group_id)
+VALUES ('Зезекало Эрнест Хемингуеевич', 'РБ, г.Витебск, ул.Правды, 17-1', '01.11.1988', '2');
+INSERT INTO climbers (full_name, adress, date_of_birth, group_id)
+VALUES ('Дадеко Станислав Виниаминович', 'РБ, г.Витебск, ул.Я.Купалы, 19', '29.06.1986', '2');
+INSERT INTO climbers (full_name, adress, date_of_birth, group_id)
+VALUES ('Мазур Сергей Константинович', 'РБ, г.Минск, ул. Кастро, 77-3-114', '23.03.1985', '2');
+INSERT INTO climbers (full_name, adress, date_of_birth, group_id)
+VALUES ('Молоков Тарас Владимирович', 'РФ, г.Казань, ул.Ломоносова, 19', '06.07.1988', '2');
+INSERT INTO climbers (full_name, adress, date_of_birth, group_id)
+VALUES ('Садовский Никита Владимирович', 'РФ, г.Москва, ул.Орджаникидзе, 43-119', '25.05.1991', '3');
+INSERT INTO climbers (full_name, adress, date_of_birth, group_id)
+VALUES ('Садовский Артём Владимирович', 'РБ, г.Витебск, ул.Богатырева, 25-102', '14.12.1989', '3');
+INSERT INTO climbers (full_name, adress, date_of_birth, group_id)
+VALUES ('Садовская Татьяна Владимировна', 'РБ, г.Витебск, ул.Богатырева, 25-102', '18.07.1987', '3');
+INSERT INTO climbers (full_name, adress, date_of_birth, group_id)
+VALUES ('Садовская Эмилия Артёмовна', 'РБ, г.Витебск, ул.Богатырева, 25-102', '03.05.2019', '3');
+INSERT INTO climbers (full_name, adress, date_of_birth, group_id)
+VALUES ('Трутченко Тимур Валерьевич', 'РБ, г.Витебск, ул.Ф.Скорыны, 3', '16.09.1988', '4');
+INSERT INTO climbers (full_name, adress, date_of_birth, group_id)
+VALUES ('Берестнев Олег Юрьевич', 'РБ, г.Витебск, ул.Пролетарская, 25-102', '18.02.1989', '4');
+INSERT INTO climbers (full_name, adress, date_of_birth, group_id)
+VALUES ('Дащёнок Павел Леонидович', 'РБ, г.Витебск, ул.Смоленская, 25-102', '30.10.1987', '4');
+INSERT INTO climbers (full_name, adress, date_of_birth, group_id)
+VALUES ('Кукишев Александр Валерьевич', 'РБ, г.Витебск, ул.Вашингтона, 21191', '06.04.1988', '4');
+
+
+
+CREATE TABLE the_mountains (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	title VARCHAR NOT NULL,
+	height_m INTEGER NOT NULL,
+	the_country VARCHAR NOT NULL,
+	countryregion VARCHAR NOT NULL,
+	mountain_system VARCHAR NOT NULL,
+	array VARCHAR NOT NULL);
+
+INSERT INTO the_mountains (title, height_m, the_country, countryregion, mountain_system, array)
+VALUES ('Джомолунгма', '8848', 'Непал, Китай', 'Тибет', 'Гималаи', 'Махалангур-Химал');
+INSERT INTO the_mountains (title, height_m, the_country, countryregion, mountain_system, array)
+VALUES ('Чогори', '8614', 'Пакистан, Китай', 'Гилгит-Балтистан, СУАР', 'Каракорум', 'Балторо Музтаг');
+INSERT INTO the_mountains (title, height_m, the_country, countryregion, mountain_system, array)
+VALUES ('Канченджанга', '8586', 'Индия, Непал', 'Сикким, Мечи', 'Гималаи', 'Канченджанга');
+INSERT INTO the_mountains (title, height_m, the_country, countryregion, mountain_system, array)
+VALUES ('Лхоцзе', '8516', 'Китай, Непал', 'Тибет', 'Гималаи', 'Махалангур-Химал');
+INSERT INTO the_mountains (title, height_m, the_country, countryregion, mountain_system, array)
+VALUES ('Макалу', '8485', 'Китай, Непал', 'Тибет', 'Гималаи', 'Махалангур-Химал');
+INSERT INTO the_mountains (title, height_m, the_country, countryregion, mountain_system, array)
+VALUES ('Чо-Ойю', '8201','Китай, Непал', 'Тибет', 'Гималаи', 'Махалангур-Химал');
+INSERT INTO the_mountains (title, height_m, the_country, countryregion, mountain_system, array)
+VALUES ('Дхаулагири I', '8167', 'Непал', 'н/д', 'Гималаи', 'Дхаулагири');
+INSERT INTO the_mountains (title, height_m, the_country, countryregion, mountain_system, array)
+VALUES ('Манаслу', '8156', 'Непаал', 'н/д', 'Гималаи', 'Манаслу');
+INSERT INTO the_mountains (title, height_m, the_country, countryregion, mountain_system, array)
+VALUES ('Нангапарбат', '8125', 'Пакистан', 'Гилгит-Балтистан', 'Гималаи', 'Нангапарбат');
+INSERT INTO the_mountains (title, height_m, the_country, countryregion, mountain_system, array)
+VALUES ('Аннапурна I', '8091', 'Непал', 'н/д', 'Гималаи', 'Аннапурна');
+INSERT INTO the_mountains (title, height_m, the_country, countryregion, mountain_system, array)
+VALUES ('Гашербрум I', '8080', 'Пакистан, Китай', 'Гилгит-Балтистан, СУАР', 'Каракорум', 'Балторо Музтаг');
+INSERT INTO the_mountains (title, height_m, the_country, countryregion, mountain_system, array)
+VALUES ('Броуд-Пик', '8051', 'Пакистан, Китай', 'Гилгит-Балтистан, СУАР', 'Каракорум', 'Балторо Музтаг');
+INSERT INTO the_mountains (title, height_m, the_country, countryregion, mountain_system, array)
+VALUES ('Гашербрум II', '8034', 'Пакистан, Китай', 'Гилгит-Балтистан, СУАР', 'Каракорум', 'Балторо Музтаг');
+INSERT INTO the_mountains (title, height_m, the_country, countryregion, mountain_system, array)
+VALUES ('Шишабангма', '8027', 'Китай', 'Тибет', 'Гималаи', 'Лангтанг');
+
+
+CREATE TABLE ascent_rates (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	successful_attempts INTEGER,
+	unsuccessful_attempts INTEGER,
+	attempts_id INTEGER,
+	FOREIGN KEY (attempts_id) REFERENCES the_mountains (id));
+
+INSERT INTO ascent_rates (successful_attempts, unsuccessful_attempts, attempts_id)
+VALUES (145, 121, 1);
+INSERT INTO ascent_rates (successful_attempts, unsuccessful_attempts, attempts_id)
+VALUES (45, 44, 2);
+INSERT INTO ascent_rates (successful_attempts, unsuccessful_attempts, attempts_id)
+VALUES (38, 24, 3);
+INSERT INTO ascent_rates (successful_attempts, unsuccessful_attempts, attempts_id)
+VALUES (26, 26, 4);
+INSERT INTO ascent_rates (successful_attempts, unsuccessful_attempts, attempts_id)
+VALUES (45, 52, 5);
+INSERT INTO ascent_rates (successful_attempts, unsuccessful_attempts, attempts_id)
+VALUES (79, 28, 6);
+INSERT INTO ascent_rates (successful_attempts, unsuccessful_attempts, attempts_id)
+VALUES (51, 39, 7);
+INSERT INTO ascent_rates (successful_attempts, unsuccessful_attempts, attempts_id)
+VALUES (49, 45, 8);
+INSERT INTO ascent_rates (successful_attempts, unsuccessful_attempts, attempts_id)
+VALUES (52, 67, 9);
+INSERT INTO ascent_rates (successful_attempts, unsuccessful_attempts, attempts_id)
+VALUES (36, 47, 10);
+INSERT INTO ascent_rates (successful_attempts, unsuccessful_attempts, attempts_id)
+VALUES (31, 16, 11);
+INSERT INTO ascent_rates (successful_attempts, unsuccessful_attempts, attempts_id)
+VALUES (39, 19, 12);
+INSERT INTO ascent_rates (successful_attempts, unsuccessful_attempts, attempts_id)
+VALUES (54, 12, 13);
+INSERT INTO ascent_rates (successful_attempts, unsuccessful_attempts, attempts_id)
+VALUES (43, 19, 14);
+
+
+CREATE TABLE expedition_dates (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	expedition_start_date VARCHAR NOT NULL,
+	expedition_end_date VARCHAR NOT NULL,
+	completed VARCHAR NOT NULL);
+
+INSERT INTO expedition_dates (expedition_start_date, expedition_end_date, completed)
+VALUES ('01.01.2021','17.01.2021', 'Да');
+INSERT INTO expedition_dates (expedition_start_date, expedition_end_date, completed)
+VALUES ('15.01.2021','28.02.2021', 'Да');
+INSERT INTO expedition_dates (expedition_start_date, expedition_end_date, completed)
+VALUES ('19.01.2021','13.02.2021', 'Да');
+INSERT INTO expedition_dates (expedition_start_date, expedition_end_date, completed)
+VALUES ('25.01.2021','20.02.2021', 'Да');
+INSERT INTO expedition_dates (expedition_start_date, expedition_end_date, completed)
+VALUES ('13.03.2021','30.03.2021', 'Да');
+INSERT INTO expedition_dates (expedition_start_date, expedition_end_date, completed)
+VALUES ('13.03.2021','25.03.2021', 'Да');
+INSERT INTO expedition_dates (expedition_start_date, expedition_end_date, completed)
+VALUES ('19.03.2021','27.03.2021', 'Да');
+INSERT INTO expedition_dates (expedition_start_date, expedition_end_date, completed)
+VALUES ('24.03.2021','03.04.2021', 'Да');
+INSERT INTO expedition_dates (expedition_start_date, expedition_end_date, completed)
+VALUES ('20.04.2021','02.05.2021', 'Да');
+INSERT INTO expedition_dates (expedition_start_date, expedition_end_date, completed)
+VALUES ('22.04.2021','03.05.2021', 'Да');
+INSERT INTO expedition_dates (expedition_start_date, expedition_end_date, completed)
+VALUES ('23.04.2021','10.05.2021', 'Да');
+INSERT INTO expedition_dates (expedition_start_date, expedition_end_date, completed)
+VALUES ('29.04.2021','04.05.2021', 'Да');
+INSERT INTO expedition_dates (expedition_start_date, expedition_end_date, completed)
+VALUES ('01.06.2021','05.06.2021', 'Да');
+INSERT INTO expedition_dates (expedition_start_date, expedition_end_date, completed)
+VALUES ('01.06.2021','09.06.2021', 'Да');
+INSERT INTO expedition_dates (expedition_start_date, expedition_end_date, completed)
+VALUES ('01.06.2021','12.06.2021', 'Да');
+INSERT INTO expedition_dates (expedition_start_date, expedition_end_date, completed)
+VALUES ('01.06.2021','19.06.2021', 'Да');
+INSERT INTO expedition_dates (expedition_start_date, expedition_end_date, completed)
+VALUES ('21.06.2021','12.07.2021', 'Да');
+INSERT INTO expedition_dates (expedition_start_date, expedition_end_date, completed)
+VALUES ('22.06.2021','14.07.2021', 'Да');
+INSERT INTO expedition_dates (expedition_start_date, expedition_end_date, completed)
+VALUES ('23.06.2021','19.07.2021', 'Да');
+INSERT INTO expedition_dates (expedition_start_date, expedition_end_date, completed)
+VALUES ('24.06.2021','29.07.2021', 'Да');
+INSERT INTO expedition_dates (expedition_start_date, expedition_end_date, completed)
+VALUES ('15.08.2021','28.09.2021', 'Да');
+INSERT INTO expedition_dates (expedition_start_date, expedition_end_date, completed)
+VALUES ('19.08.2021','13.09.2021', 'Да');
+INSERT INTO expedition_dates (expedition_start_date, expedition_end_date, completed)
+VALUES ('25.08.2021','20.09.2021', 'Да');
+INSERT INTO expedition_dates (expedition_start_date, expedition_end_date, completed)
+VALUES ('25.08.2021','30.09.2021', 'Да');
+INSERT INTO expedition_dates (expedition_start_date, expedition_end_date, completed)
+VALUES ('13.10.2021','25.11.2021', 'Да');
+INSERT INTO expedition_dates (expedition_start_date, expedition_end_date, completed)
+VALUES ('19.10.2021','27.11.2021', 'Да');
+INSERT INTO expedition_dates (expedition_start_date, expedition_end_date, completed)
+VALUES ('24.10.2021','03.11.2021', 'Да');
+INSERT INTO expedition_dates (expedition_start_date, expedition_end_date, completed)
+VALUES ('20.10.2021','02.11.2021', 'Да');
+INSERT INTO expedition_dates (expedition_start_date, expedition_end_date, completed)
+VALUES ('13.01.2022','н/д', 'НЕТ');
+INSERT INTO expedition_dates (expedition_start_date, expedition_end_date, completed)
+VALUES ('13.01.2022','н/д', 'НЕТ');
+INSERT INTO expedition_dates (expedition_start_date, expedition_end_date, completed)
+VALUES ('19.01.2022','н/д', 'НЕТ');
+INSERT INTO expedition_dates (expedition_start_date, expedition_end_date, completed)
+VALUES ('24.01.2022','н/д', 'Нет');
+
+SELECT * FROM ascent_rates;
+SELECT * FROM groups;
+SELECT * FROM the_mountains;
+SELECT * FROM climbers;
+SELECT * FROM expedition_dates;
+
+
+
+/*** 1) для каждой горы показать список групп, осуществлявших восхождение, в хронологическом порядке; ***/
+
+CREATE TABLE mountain_climbing (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	mountain_id INTEGER NOT NULL,
+	group_id INTEGER NOT NULL,
+	expedition_date_id INTEGER NOT NULL,
+	FOREIGN KEY (mountain_id) REFERENCES the_mountains (id), 
+	FOREIGN KEY (group_id) REFERENCES groups (id),
+	FOREIGN KEY (expedition_date_id) REFERENCES expedition_dates (id));
+
+INSERT INTO mountain_climbing (mountain_id, group_id, expedition_date_id)
+VALUES ('1', '1', '1');
+INSERT INTO mountain_climbing (mountain_id, group_id, expedition_date_id)
+VALUES ('2', '2', '2');
+INSERT INTO mountain_climbing (mountain_id, group_id, expedition_date_id)
+VALUES ('3', '3', '3');
+INSERT INTO mountain_climbing (mountain_id, group_id, expedition_date_id)
+VALUES ('4', '4', '4');
+INSERT INTO mountain_climbing (mountain_id, group_id, expedition_date_id)
+VALUES ('5', '2', '5');
+INSERT INTO mountain_climbing (mountain_id, group_id, expedition_date_id)
+VALUES ('6', '3', '6');
+INSERT INTO mountain_climbing (mountain_id, group_id, expedition_date_id)
+VALUES ('7', '4', '7');
+INSERT INTO mountain_climbing (mountain_id, group_id, expedition_date_id)
+VALUES ('1', '2', '8');
+INSERT INTO mountain_climbing (mountain_id, group_id, expedition_date_id)
+VALUES ('8', '1', '9');
+INSERT INTO mountain_climbing (mountain_id, group_id, expedition_date_id)
+VALUES ('2', '3', '10');
+
+SELECT * FROM mountain_climbing ORDER BY expedition_date_id;
+
+/*** 2) предоставить возможность добавления новой вершины, с указанием названия вершины, высоты и страны местоположения; ***/
+
+INSERT INTO the_mountains (title, height_m, the_country, countryregion, mountain_system, array)
+VALUES ('TEST_mountain', '8848', 'Непал, Китай', 'Тибет', 'Гималаи', 'Махалангур-Химал');
+
+
+/*** 3) предоставить возможность изменения данных о вершине, если на нее не было восхождения; ***/
+
+ALTER TABLE the_mountains ADD conquered VARCHAR;
+
+UPDATE the_mountains SET conquered = 'Да' WHERE id = 1;
+UPDATE the_mountains SET conquered = 'Да' WHERE id = 2;
+UPDATE the_mountains SET conquered = 'Да' WHERE id = 3;
+UPDATE the_mountains SET conquered = 'Да' WHERE id = 4;
+UPDATE the_mountains SET conquered = 'Да' WHERE id = 5;
+UPDATE the_mountains SET conquered = 'Да' WHERE id = 6;
+UPDATE the_mountains SET conquered = 'Да' WHERE id = 7;
+UPDATE the_mountains SET conquered = 'Да' WHERE id = 8;
+UPDATE the_mountains SET conquered = 'Да' WHERE id = 9;
+UPDATE the_mountains SET conquered = 'Да' WHERE id = 10;
+UPDATE the_mountains SET conquered = 'Да' WHERE id = 11;
+UPDATE the_mountains SET conquered = 'Да' WHERE id = 12;
+UPDATE the_mountains SET conquered = 'Да' WHERE id = 13;
+UPDATE the_mountains SET conquered = 'Да' WHERE id = 14;
+UPDATE the_mountains SET conquered = 'Нет' WHERE id = 15;
+
+SELECT * FROM the_mountains;
+
+/*** 4) показать список альпинистов, осуществлявших восхождение в указанный интервал дат; ***/
+/*** 5) предоставить возможность добавления нового альпиниста в состав указанной группы; ***/
+/*** 6) показать информацию о количестве восхождений каждого альпиниста на каждую гору; ***/
+/*** 7) показать список восхождений (групп), которые осуществлялись в указанный пользователем период времени; ***/
+/*** 8) предоставить возможность добавления новой группы, указав ее название, вершину, время начала восхождения; ***/
+/*** 9) предоставить информацию о том, сколько альпинистов побывали на каждой горе; ***/
+/*** 10) предусмотреть разработку триггеров, обеспечивающих каскадные изменения в связанных таблицах. ***/
