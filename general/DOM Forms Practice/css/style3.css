@@ -1,0 +1,15 @@
+#general{
+    display: flex;
+}
+.block{
+    position: relative;
+    height: 200px;
+    width: 200px;
+    background: rgba(0, 0, 0, 1);
+    border: solid 1px white;
+    font-size: 20px;
+
+}
+.opacity{
+    background: rgba(0, 0, 0, 0.5)
+}

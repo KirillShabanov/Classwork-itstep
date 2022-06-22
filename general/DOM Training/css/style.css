@@ -1,0 +1,110 @@
+html,body{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background: url(../pic/img.jpg);
+}
+.begin-screen{
+    display: flex;
+    height: 500px;
+    width: 500px;
+    border: 5px solid #000;
+    border-radius: 10px ;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-btn{
+    background: tomato;
+    border: 1px solid tomato;
+    margin-bottom: 10px;
+    width: 200px;
+}
+
+.stat-btn{
+    width: 200px;
+}
+.stat-btn:hover{
+    background: rgb(21, 110, 18);
+    border: 1px solid rgb(21, 110, 18);
+}
+
+.game-btn:hover{
+    background: rgb(21, 110, 18);
+    border: 1px solid rgb(21, 110, 18);
+}
+
+.players-names-form{
+    display: flex;
+    height: 500px;
+    width: 500px;
+    border: 1px solid #000;
+    border-radius: 10px ;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.game-panel{
+    display: flex;
+    height: 500px;
+    width: 500px;
+    border: 1px solid #000;
+    border-radius: 10px ;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.game-field{
+    position: relative;
+    display: flex;
+    height: 300px;
+    width: 300px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 0px;
+    padding: 0px;
+}
+.field{
+    height: 100px;
+    width: 100px;
+    border: 1px solid #000;
+}
+.game-logs{
+    height: 400px;
+    width: 300px;
+    border: 1px solid #000;
+    margin-left: 10px;
+    border-radius: 7px;
+}
+.cross{
+    
+        height: 100px;
+        width: 100px;
+        background-color: #000;
+        border-radius: 10px;
+        position: relative;
+    
+}
+.cross:after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: "\274c"; /* use the hex value here... */
+    font-size: 50px; 
+    color: #FFF;
+    line-height: 100px;
+    text-align: center;
+}
+.circle{
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+}

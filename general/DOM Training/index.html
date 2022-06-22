@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="begin-screen">
+        <button type="button" class="game-btn btn btn-primary btn-lg ">Game</button>
+        <button type="button" class="btn btn-primary btn-lg stat-btn">Stat</button>
+    </div>
+    <div class="players-names-form d-none">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">Player 1</span>
+            <input type="text" class="form-control player1 " aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">Player 2</span>
+            <input type="text" class="form-control player2 " aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          </div>
+          <button type="button" class="btn btn-primary btn-lg start-game">Start</button>           
+    </div>
+    <div class="game-panel d-none">
+        <div class="game-field"></div>
+        
+    </div>
+    <div class="game-logs d-none"></div>
+    <script src="./script/app.js"></script>
+    <script src="./script/bootstrap.bundle.min.js"></script>
+</body>
+</html>
