@@ -1,0 +1,41 @@
+.card {
+    box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.4);
+    transition: box-shadow 0.2s;
+    width: 60%;
+    margin: 0 auto;
+}
+.card:hover {
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 1);
+}
+.container {
+    display: flex;
+    height: 120vh;
+    font-size: 20px;
+    justify-content: start;
+    padding: 4px;
+}
+.sidebar {
+    width: 30%;
+    border-radius: 0 70px 0 0;
+    padding-left: 16px;
+}
+.main {
+    width: 60%;
+}
+.social2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 0.5em;
+}
+.social2 a {
+    margin: 6px;
+}
+h4, h5 {
+    margin-block-start: 0.5rem;
+    margin-block-end: 0.5rem;
+}
+p {
+    margin-block-start: 0.3rem;
+    margin-block-end: 0.3rem;
+}
